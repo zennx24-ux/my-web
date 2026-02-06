@@ -1,0 +1,87 @@
+/* Reset margin dan padding bawaan browser */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Membuat body setinggi layar HP */
+}
+
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 150px;       /* Ukuran lebar */
+    height: 150px;      /* Ukuran tinggi (samakan agar bulat sempurna) */
+    border-radius: 50%; /* Membuat jadi bulat */
+    border: 3px solid #3498db;
+    margin-bottom: 15px;
+
+    /* INI KUNCINYA */
+    object-fit: cover;  
+    object-position: center; /* Memastikan bagian tengah foto yang diambil */
+}
+
+.card p {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+/* Container untuk mengatur jarak antar tombol */
+.button-group {
+    display: flex;
+    flex-direction: column; /* Tombol disusun ke bawah */
+    gap: 10px;              /* Jarak antar tombol */
+    margin-top: 20px;
+}
+
+/* Base style untuk semua tombol */
+.btn {
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+/* Warna spesifik tiap platform */
+.ig { background-color: #e1306c; } /* Warna Instagram */
+.wa { background-color: #25d366; } /* Warna WhatsApp */
+.gh { background-color: #333333; } /* Warna GitHub */
+
+/* Efek saat tombol ditekan */
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px); /* Tombol sedikit naik saat disentuh */
+}

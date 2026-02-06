@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Kartu Profil Termux</title>
+</head>
+<body>
+
+    <div class="card">
+        <img src="profil.jpg" alt="Foto Profil">
+        <h2>Muhammad Zainur Rozikin</h2>
+        <p>Fullstack Developer Pelajar Termux</p>
+        <a href="#" class="btn">Ikuti Saya</a>
+    </div>
+
+</body>
+</html>
