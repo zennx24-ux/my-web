@@ -34,19 +34,18 @@ body {
 
 /* --- CSS SLIDER FOTO --- */
 .slider-container {
-    width: 120px;
-    height: 120px;
-    margin: 0 auto 20px;
-    overflow: hidden;
+    width: 150px; /* Ukuran bulatannya */
+    height: 150px;
+    margin: 0 auto;
+    overflow: hidden; /* Ini agar foto yang lain tersembunyi */
     border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid #3498db;
 }
 
 .slider-track {
-    display: flex;
-    width: 480px; /* 120px x 4 foto */
-    animation: gulir 10s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    display: flex; /* Ini agar foto berjejer ke samping, bukan ke bawah */
+    width: 600px; /* Lebar foto (150px) x 4 foto */
+    animation: gulir 10s infinite;
 }
 
 .slider-track img {
@@ -90,11 +89,12 @@ body {
 
 /* --- OVERLAY CERITA --- */
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 1000;
+    display: none; 
+    position: fixed; /* Agar melayang di atas semua konten */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    z-index: 9999; /* Agar paling depan */
     justify-content: center;
     align-items: center;
     flex-direction: column;
