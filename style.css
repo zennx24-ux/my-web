@@ -33,32 +33,44 @@ body {
 .card p { color: #666; margin-bottom: 20px; font-size: 14px; }
 
 /* --- CSS SLIDER FOTO --- */
+/* --- CSS SLIDER MOTION (FIX CENTER & FULL) --- */
 .slider-container {
-    width: 150px; /* Ukuran bulatannya */
-    height: 150px;
-    margin: 0 auto;
-    overflow: hidden; /* Ini agar foto yang lain tersembunyi */
+    width: 180px;        /* Ukuran lingkaran (bisa kamu sesuaikan) */
+    height: 180px;
+    margin: 0 auto 20px;
+    overflow: hidden;    /* Memotong bagian gambar di luar lingkaran */
     border-radius: 50%;
-    border: 3px solid #3498db;
+    border: 4px solid #3498db;
+    display: flex;       /* Membantu pemusatan */
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .slider-track {
-    display: flex; /* Ini agar foto berjejer ke samping, bukan ke bawah */
-    width: 600px; /* Lebar foto (150px) x 4 foto */
-    animation: gulir 10s infinite;
+    display: flex;
+    /* Lebar track = lebar container (180px) x jumlah foto (4) */
+    width: 720px;        
+    height: 100%;
+    /* Mengganti nama 'gulir' menjadi 'motion' */
+    animation: motion 12s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .slider-track img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
+    width: 180px;        /* HARUS SAMA dengan lebar .slider-container */
+    height: 180px;       /* HARUS SAMA dengan tinggi .slider-container */
+    object-fit: cover;   /* INI KUNCINYA: Gambar akan full dan tetap proporsional */
+    object-position: center; /* Memastikan wajah/tengah gambar selalu di tengah */
+    flex-shrink: 0;      /* Mencegah gambar menyusut */
 }
 
-@keyframes gulir {
-    0%, 25%   { transform: translateX(0); }
-    30%, 55%  { transform: translateX(-120px); }
-    60%, 85%  { transform: translateX(-240px); }
-    90%, 100% { transform: translateX(-360px); }
+/* Animasi Motion */
+@keyframes motion {
+    0%, 20%   { transform: translateX(0); }             /* Foto 1 */
+    25%, 45%  { transform: translateX(-180px); }       /* Foto 2 */
+    50%, 70%  { transform: translateX(-360px); }       /* Foto 3 */
+    75%, 95%  { transform: translateX(-540px); }       /* Foto 4 (Duplikat Foto 1) */
+    100%      { transform: translateX(-540px); }
 }
 
 /* --- TOMBOL --- */
