@@ -3,26 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Kartu Profil Saya</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <audio id="clickSound" src="click.mp3"></audio>
+
     <div class="card">
-        <img src="profil.jpg" alt="Foto Profil">
-        
-        <h2>Muhammad Zainur Rozikin</h2>
-        <p>wibu</p>
-        
-        <div class="info">
-            <p><strong>Status:</strong> wibu</p>
-            <p><strong>Lokasi:</strong> jepun</p>
+        <div class="slider-container">
+            <div class="slider-track">
+                <img src="Foto1.jpg" alt="Foto 1">
+                <img src="Foto2.jpg" alt="Foto 2">
+                <img src="Foto3.jpg" alt="Foto 3">
+                <img src="Foto1.jpg" alt="Foto 1"> </div>
         </div>
-    <div class="button-group">
-        <a href="https://www.instagram.com/zainurozikn?igsh=MWs3ZGpiOGgycng4bA==" class="btn ig" target="_blank">Instagram</a>
-        <a href="https://www.tiktok.com/@zennx241?_r=1&_t=ZS-93gexkr5sOn" class="btn wa" target="_blank">Tiktok</a>
-        <a href="....." class="btn gh" target="_blank">Whatsapp</a>
+
+        <h2>M. Zainur. R</h2>
+        <p>contoh kartu nama digital</p>
+<a>hanya sebuah contoh, belum fix dan masih bisa dikembangkan lagi. Jadi kalo mau di buatkan bisa hubungi kontak di bawah yaaa :)</a>
+        <div class="button-group">
+            <a href="https://www.instagram.com/zainurozikn?igsh=MWs3ZGpiOGgycng4bA==" class="btn ig" onclick="playAudio()" target="_blank">Instagram</a>
+            <a href="unknown" class="btn wa" onclick="playAudio()" target="_blank">WhatsApp</a>
+            <a href="https://www.tiktok.com/@zennx241?_r=1&_t=ZS-93gexkr5sOn"" class="btn gh" onclick="playAudio()" target="_blank">GitHub</a>
+            <button class="btn story-btn" onclick="playAudio(); openStory()">Lihat Cerita</button>
+        </div>
     </div>
-</div>
+
+    <div id="storyOverlay" class="overlay">
+        <span class="close-btn" onclick="closeStory()">&times;</span>
+        <div class="story-content">
+            <img src="foto-cerita.jpg" alt="Cerita">
+            <p>Halo dunia dari Termux! 🚀</p>
+        </div>
+    </div>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById("clickSound");
+            audio.play();
+        }
+
+        function openStory() {
+            document.getElementById("storyOverlay").style.display = "flex";
+        }
+
+        function closeStory() {
+            document.getElementById("storyOverlay").style.display = "none";
+        }
+    </script>
 </body>
 </html>
