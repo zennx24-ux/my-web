@@ -5,106 +5,108 @@
     box-sizing: border-box;
 }
 
-/* style.css */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background: #f4f4f4;
+    background-color: #fafafa;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    font-family: sans-serif;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.card {
+/* Container utama gaya Instagram */
+.instagram-card {
     background: white;
-    padding: 20px;
-    border-radius: 20px;
+    width: 350px;
+    padding: 30px 20px;
+    border: 1px solid #dbdbdb;
+    border-radius: 8px;
     text-align: center;
-    width: 320px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* KUNCI PERBAIKAN: Slider harus presisi */
-.slider-container {
-    width: 200px;           /* Ukuran Jendela */
-    height: 200px;
-    margin: 0 auto 15px;
-    overflow: hidden;       /* Potong gambar yang mengintip */
+/* --- SLIDER FOTO PROFIL --- */
+.profile-pic-container {
+    width: 150px;       /* Ukuran lingkaran tidak terlalu besar */
+    height: 150px;
+    margin: 0 auto 20px;
+    overflow: hidden;   /* Kunci agar tidak melebar */
     border-radius: 50%;
-    border: 5px solid #3498db;
+    border: 2px solid #dbdbdb;
+    padding: 3px;
+    background: white;
 }
 
 .slider-track {
     display: flex;
-    width: 800px;           /* Harus 200px x 4 foto */
+    width: 600px;       /* 150px x 4 foto */
+    height: 100%;
     animation: motion 12s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
 }
 
 .slider-track img {
-    width: 200px;           /* Harus SAMA dengan container */
-    height: 200px;
-    object-fit: cover;      /* Full & Center */
-    flex-shrink: 0;         /* Cegah gambar terhimpit */
+    width: 150px;       /* Harus pas dengan container */
+    height: 150px;
+    object-fit: cover;  /* Full & Center otomatis */
+    flex-shrink: 0;
 }
 
 @keyframes motion {
     0%, 20%   { transform: translateX(0); }
-    25%, 45%  { transform: translateX(-200px); }
-    50%, 70%  { transform: translateX(-400px); }
-    75%, 95%  { transform: translateX(-600px); }
-    100%      { transform: translateX(-600px); }
+    25%, 45%  { transform: translateX(-150px); }
+    50%, 70%  { transform: translateX(-300px); }
+    75%, 95%  { transform: translateX(-450px); }
+    100%      { transform: translateX(-450px); }
 }
 
-/* --- TOMBOL --- */
-.button-group {
+/* Teks & Bio */
+.username {
+    font-size: 20px;
+    font-weight: 600;
+    color: #262626;
+    margin-bottom: 5px;
+}
+
+.category {
+    color: #8e8e8e;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.bio {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #262626;
+    margin-bottom: 20px;
+}
+
+/* Tombol Gaya Instagram */
+.action-buttons {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    justify-content: center;
 }
 
 .btn {
-    padding: 12px;
-    border-radius: 10px;
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
     font-size: 14px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
 }
 
-.btn:active { transform: scale(0.95); }
-
-.ig { background: #e1306c; }
-.wa { background: #25d366; }
-.gh { background: #333; }
-.story-btn { background: #f39c12; }
-
-/* --- OVERLAY CERITA --- */
-.overlay {
-    display: none; 
-    position: fixed; /* Agar melayang di atas semua konten */
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    z-index: 9999; /* Agar paling depan */
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.btn-primary {
+    background-color: #0095f6;
+    color: white;
 }
 
-.story-content img {
-    max-width: 85%;
-    max-height: 70vh;
-    border-radius: 15px;
-    border: 3px solid white;
+.btn-primary:hover { background-color: #1877f2; }
+
+.btn-secondary {
+    background-color: #efefef;
+    color: #262626;
 }
 
-.story-content p { color: white; margin-top: 20px; }
-.close-btn {
-    position: absolute; top: 20px; right: 30px;
-    color: white; font-size: 40px; cursor: pointer;
-}
+.btn-secondary:hover { background-color: #dbdbdb; }
